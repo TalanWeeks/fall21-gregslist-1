@@ -21,6 +21,7 @@ export class HousesController {
      * @type {HTMLFormElement}
      */
 
+     // @ts-ignore
     const form = event.target
 
     const houseData = {

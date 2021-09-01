@@ -18,7 +18,7 @@ export class House {
       <div class="card">
       <img src="${this.img}" alt="listing image" class="rounded">
         <div class="card-body">
-          <h5 class="d-flex justify-content-between">
+          <h5 class="">
             <span>Address: ${this.address}</span>
             <span>Bedrooms: ${this.bedrooms}</span>
             <span>Baths: ${this.baths}</span>

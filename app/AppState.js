@@ -5,6 +5,8 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Car').Car[]} */
   cars = []
   houses = []
+
+  jobs = []
 }
 
 

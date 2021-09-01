@@ -1,6 +1,6 @@
 // NOTE this imports a file with a function that gives things a random 16 character id. shouts out jake
 
-import { generateId } from "../Utils/generateId";
+import { generateId } from "../Utils/generateId.js";
 
 
 // NOTE this defines the data we are looking for when dealing with a job. setting it equal to what our user will put into our form.

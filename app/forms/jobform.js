@@ -3,7 +3,7 @@
 export function getJobFormTemplate(){
   return /*html*/`
   <form class="bg-white rounded p-3 shadow visually-hidden" onsubmit="app.jobsController.addJob()"
-  id="house-form">
+  id="job-form">
   
   <div class="form-group">
   <label for="companyName" class="">Company Name:</label>
