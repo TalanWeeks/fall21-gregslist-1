@@ -1,30 +1,28 @@
 // NOTE creates a form in html to be imported and used inside the JobController
 
-
-
-// TODO change form info to match job model
 export function getJobFormTemplate(){
   return /*html*/`
-  <form class="bg-white rounded p-3 shadow visually-hidden" onsubmit="app.housesController.addHouse()"
+  <form class="bg-white rounded p-3 shadow visually-hidden" onsubmit="app.jobsController.addJob()"
   id="house-form">
+  
+  <div class="form-group">
+  <label for="companyName" class="">Company Name:</label>
+  <input type="text" class="form-control" name="companyName" id="companyName" required>
+  </div>
+  
+  <div class="form-group">
+  <label for="jobTitle" class="">Job Title:</label>
+  <input type="text" class="form-control" name="jobTitle" id="jobTitle" required>
+  </div>
+
   <div class="form-group">
     <label for="address" class="">Address:</label>
     <input type="text" class="form-control" name="address" id="address" required>    
   </div>
 
   <div class="form-group">
-    <label for="bedrooms" class="">Bedrooms:</label>
-    <input type="number" class="form-control" name="bedrooms" id="bedrooms" min="1" max="50" required>
-  </div>
-
-  <div class="form-group">
-    <label for="baths" class="">Baths:</label>
-    <input type="number" class="form-control" name="baths" id="baths" min="0" max="20" required>
-  </div>
-
-  <div class="form-group">
-    <label for="sqrfeet">Square-Feet:</label>
-    <input type="number" class="form-control" name="sqrfeet" id="sqrfeet" min="0" max="10000000" required>
+    <label for="pay">Salary:</label>
+    <input type="number" class="form-control" name="pay" id="pay" min="10000" max="1000000000" required>
     </div>
 
     <div class="form-group">
