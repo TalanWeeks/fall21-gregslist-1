@@ -13,6 +13,7 @@ export class Job {
     this.address = jobData.address 
     this.jobTitle = jobData.jobTitle
     this.pay = jobData.pay
+    this.description = jobData.description
     this.img = jobData.img    
   }
 
@@ -20,8 +21,22 @@ export class Job {
   // NOTE this is where we define what our card will look like when it pops up on our img. Its put into a function to be called when we need it.
 
   get CardTemplate(){
-    
-
+    return /*html*/`
+    <div class="col-lg-3 mb-4 listing">
+      <div class="card">
+      <img src="${this.img}" alt="listing image" class="rounded">
+        <div class="card-body">
+          <h5 class="">
+            <span>Company: ${this.companyName}</span>
+            <span>Job Title: ${this.jobTitle}</span>
+            <span>Address: ${this.address}</span>
+            <span>Pay: ${this.pay}</span>            
+          </h5>
+            <p>Description: ${this.description}</p>           
+        </div>
+      </div>
+    </div>
+    `
   }
 
 }
