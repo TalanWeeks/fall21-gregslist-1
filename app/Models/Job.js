@@ -13,8 +13,7 @@ export class Job {
     this.company = jobData.company
     this.rate = jobData.rate
     this.hours = jobData.hours
-    this.description = jobData.description
-    this.img = jobData.img    
+    this.description = jobData.description  
   }
 
 
@@ -26,12 +25,13 @@ export class Job {
       <div class="card">
         <div class="card-body">
           <h5 class="">
-          <span>Job Title: ${this.jobTitle}</span>
-            <span>Company: ${this.company}</span>
-            <span>Rate: ${this.rate}</span>
-            <span>Hours: ${this.hours}</span>            
+          <h5>Job Title: ${this.jobTitle}</h5><br>
+            <span>Company: ${this.company}</span><br>
+            <span>Rate: ${this.rate}</span><br>
+            <span>Hours: ${this.hours}</span> <br>           
           </h5>
-            <p>Description: ${this.description}</p>           
+            <p>Description: ${this.description}</p>    
+            <button class="btn btn-danger" onclick="app.jobsController.deleteJob('${this.id}')">Delete</button>         
         </div>
       </div>
     </div>

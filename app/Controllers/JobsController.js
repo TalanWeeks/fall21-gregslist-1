@@ -1,5 +1,5 @@
 import { ProxyState } from "../AppState.js"
-import { jobsServices } from "../Services/JobsService.js"
+import { jobsService } from "../Services/JobsService.js"
 import { getJobFormTemplate } from "../forms/jobform.js"
 
 
@@ -16,6 +16,7 @@ function _drawJobs(){
 export class JobsController{
   constructor() {
     ProxyState.on("jobs", _drawJobs)
+    jobsService.getJobs()
   }
 
 
@@ -31,16 +32,16 @@ export class JobsController{
     const form = event.target
 
     const jobData ={
-      companyName: form.companyName.value,
+      company: form.company.value,
       jobTitle: form.jobTitle.value,
-      address: form.address.value,
-      pay: form.pay.value,
+      hours: form.hours.value,
+      rate: form.rate.value,
       description: form.description.value,
-      img: form.img.value
+      
     }
 
     try{
-      jobsServices.addJob(jobData)
+      jobsService.addJob(jobData)
     } catch (e){
       form.companyName.classList.add("border-danger")
       console.error("TODO fix me",e)
@@ -63,5 +64,14 @@ export class JobsController{
 
   toggleJobForm(){
     document.getElementById("job-form").classList.toggle("visually-hidden")
+  }
+
+  async deleteJob(jobId){
+    try {
+      // TODO alerty are you sure????
+      await jobsService.deleteJob(jobId)
+    } catch (error) {
+      alert(error.message)
+    }
   }
 }

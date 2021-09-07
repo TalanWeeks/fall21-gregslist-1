@@ -20,11 +20,11 @@ export class House {
       <img src="${this.imgUrl}" alt="listing image" class="rounded">
         <div class="card-body">
           <h5 class="">
-          <span>Bedrooms: ${this.bedrooms}</span>
-          <span>Bathrooms: ${this.bathrooms}</span>
-          <span>Levels: ${this.levels}</span>
-          <span>Year: ${this.year}</span>
-            <span>Price: $${this.price}</span>
+          <span>Bedrooms: ${this.bedrooms}</span><br>
+          <span>Bathrooms: ${this.bathrooms}</span><br>
+          <span>Levels: ${this.levels}</span><br>
+          <span>Year: ${this.year}</span><br>
+            <span>Price: $${this.price}</span><br>
             </h5>
             <p>Description: ${this.description}</p>
             <button class="btn btn-danger" onclick="app.housesController.deleteHouse('${this.id}')">Delete</button>           
