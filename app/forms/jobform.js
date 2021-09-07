@@ -1,6 +1,6 @@
 // NOTE creates a form in html to be imported and used inside the JobController
 
-export function getJobFormTemplate(){
+export function getJobFormTemplate(){  
   return /*html*/`
   <form class="bg-white rounded p-3 shadow visually-hidden" onsubmit="app.jobsController.addJob()"
   id="job-form">

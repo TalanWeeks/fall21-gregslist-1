@@ -11,6 +11,7 @@ function _drawHouses() {
 export class HousesController {
   constructor() {
     ProxyState.on(`houses`,_drawHouses)
+    housesService.getHouses()
     
   }
 
@@ -25,18 +26,19 @@ export class HousesController {
     const form = event.target
 
     const houseData = {
-      address: form.address.value,
       bedrooms: form.bedrooms.value,
-      baths: form.baths.value,
-      sqrfeet: form.sqrfeet.value,
+      bathrooms: form.bathrooms.value,
+      levels: form.levels.value,
+      year: form.year.value,
+      price: form.price.value,
       description: form.description.value,
-      img: form.img.value
+      imgUrl: form.imgUrl.value
     }
 
     try{
       housesService.addHouse(houseData)
     } catch (e) {
-      form.address.classList.add(`border-danger`)
+      form.make.classList.add(`border-danger`)
       console.error(`TODO FIX ME`, e)
       return
     }
@@ -55,6 +57,15 @@ export class HousesController {
 
   toggleHouseForm() {
     document.getElementById(`house-form`).classList.toggle("visually-hidden")
+  }
+
+  async deleteHouse(houseId){
+    try {
+      // TODO alerty are you sure????
+      await housesService.deleteHouse(houseId)
+    } catch (error) {
+      alert(error.message)
+    }
   }
 
 }

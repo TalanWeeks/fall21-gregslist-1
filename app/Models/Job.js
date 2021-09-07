@@ -8,11 +8,11 @@ import { generateId } from "../Utils/generateId.js";
 export class Job {
 
   constructor(jobData){
-    this.id = jobData.id || generateId()
-    this.companyName = jobData.companyName
-    this.address = jobData.address 
+    this.id = jobData.id 
     this.jobTitle = jobData.jobTitle
-    this.pay = jobData.pay
+    this.company = jobData.company
+    this.rate = jobData.rate
+    this.hours = jobData.hours
     this.description = jobData.description
     this.img = jobData.img    
   }
@@ -24,13 +24,12 @@ export class Job {
     return /*html*/`
     <div class="col-lg-3 mb-4 listing">
       <div class="card">
-      <img src="${this.img}" alt="listing image" class="rounded">
         <div class="card-body">
           <h5 class="">
-            <span>Company: ${this.companyName}</span>
-            <span>Job Title: ${this.jobTitle}</span>
-            <span>Address: ${this.address}</span>
-            <span>Pay: ${this.pay}</span>            
+          <span>Job Title: ${this.jobTitle}</span>
+            <span>Company: ${this.company}</span>
+            <span>Rate: ${this.rate}</span>
+            <span>Hours: ${this.hours}</span>            
           </h5>
             <p>Description: ${this.description}</p>           
         </div>
